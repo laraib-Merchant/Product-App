@@ -1,15 +1,15 @@
 const getData = () => {
     axios.get("https://lazy-gold-katydid-yoke.cyclic.app/products")
         .then((res) => {
-            const products = res.data.products;
+            const products = res.data.data;
             products.map((item) => {
                 document.querySelector("#table").innerHTML += `
-            <tr id=${item._id}>
+            <tr id=${item.id}>
             <td id="name">${item.name}</td>
-            <td id="price">${item.price}</htd>
+            <td id="price">${item.price}</td>
             <td id="description">${item.description}</td>
-            <td><button id="edit" onclick=updayDatad("${item._id}")><i class="fa-solid fa-pencil"></i></button></td>
-            <td><button id="delete" onclick=deleteDatad("${item._id}")><i class="fa-solid fa-trash"></i></button></td>
+            <td><button id="edit" onclick=updayDatad("${item.id}")><i class="fa-solid fa-pencil"></i></button></td>
+            <td><button id="delete" onclick=deleteDatad("${item.id}")><i class="fa-solid fa-trash"></i></button></td>
             </tr>
             `
             })
@@ -27,7 +27,7 @@ function updayDatad(id) {
     document.getElementById(`${id}`).innerHTML = `
         <tr>
             <td><input  id="${id}-name"  value="${name}" /></td>
-            <td><input  id="${id}-price" value=${price} /></htd>
+            <td><input  id="${id}-price" value=${price} /></td>
             <td><input  id="${id}-description" value="${description}"  /></td>
             <td><button onclick=updateData("${id}")><i class="fa-solid fa-pencil"></i></button></td>
             <td><button id="delete" onclick=deleteDatad("${id}")><i class="fa-solid fa-trash"></i></button></td>

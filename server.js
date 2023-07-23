@@ -1,5 +1,5 @@
 const getData = () => {
-    axios.get("https://lazy-gold-katydid-yoke.cyclic.app/products")
+    axios.get("https://wide-eyed-bandanna-bass.cyclic.app/products")
         .then((res) => {
             const products = res.data.data;
             products.map((item) => {
@@ -35,7 +35,7 @@ function updayDatad(id) {
         `
 }
 function deleteDatad(id) {
-    axios.delete(`https://lazy-gold-katydid-yoke.cyclic.app/product/${id}`)
+    axios.delete(`https://wide-eyed-bandanna-bass.cyclic.app/product/${id}`)
         .then((res) => {
             alert("Product deleted Succesfully")
             window.location.reload()
@@ -46,7 +46,7 @@ function deleteDatad(id) {
         })
 }
 function updateData(id) {
-    axios.put(`https://lazy-gold-katydid-yoke.cyclic.app/product/${id}`, {
+    axios.put(`https://wide-eyed-bandanna-bass.cyclic.app/product/${id}`, {
         name: document.getElementById(`${id}-name`).value,
         price: document.getElementById(`${id}-price`).value,
         description: document.getElementById(`${id}-description`).value,
@@ -64,7 +64,7 @@ getData()
 const addBtn = document.getElementById("add")
 
 addBtn.addEventListener("click", () => {
-    axios.post("https://lazy-gold-katydid-yoke.cyclic.app/product", {
+    axios.post("https://wide-eyed-bandanna-bass.cyclic.app/product", {
         name: document.querySelector("#name").value,
         description: document.querySelector("#description").value,
         price: document.querySelector("#price").value,

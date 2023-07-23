@@ -1,7 +1,9 @@
 const getData = () => {
     axios.get("https://wide-eyed-bandanna-bass.cyclic.app/products")
         .then((res) => {
+            console.log(res);
             const products = res.data.data;
+            console.log(products);
             products.map((item) => {
                 document.querySelector("#table").innerHTML += `
             <tr id=${item.id}>
